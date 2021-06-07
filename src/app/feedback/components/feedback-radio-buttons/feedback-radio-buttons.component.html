@@ -1,0 +1,17 @@
+<div class="radio__container">
+  <h2 class="radio__title">Hoe eenvoudig kon je je huis online plaatsen?</h2>
+
+  <div class="radio__items">
+    <div class="radio__item" *ngFor="let option of radioButtonOptions">
+      <input
+        type="radio"
+        [checked]="selectedOption === option"
+        name="item.value"
+        (click)="onOptionClick(option)"
+      />
+      <span class="radio__button" [ngClass]="'radio__button--' + option">
+        <i [ngClass]="'i-smiley-' + option"></i>
+      </span>
+    </div>
+  </div>
+</div>
