@@ -50,11 +50,8 @@ export class FeedbackPageComponent implements OnInit {
         this.formSubmitted = true;
       },
       (err) => {
-        // show error alert
+        // do something like show error toast
       }
     );
-
-    console.log('submitted form with:');
-    console.log(this.feedbackForm.value as Feedback);
   }
 }

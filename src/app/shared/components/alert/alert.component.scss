@@ -1,0 +1,10 @@
+.alert {
+  background-color: var(--success-50);
+  color: var(--success);
+  padding: 20px 15px 18px;
+
+  p {
+    margin: 0;
+    line-height: 1;
+  }
+}

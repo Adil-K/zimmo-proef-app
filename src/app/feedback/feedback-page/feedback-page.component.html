@@ -32,6 +32,13 @@
         ></app-button>
       </div>
     </div>
+
+    <div
+      class="p-left-35 p-right-35 p-top-20 m-bottom-20"
+      *ngIf="formSubmitted"
+    >
+      <app-alert text="Feedback met succes verzonden!"></app-alert>
+    </div>
   </form>
 
   <div class="section">
@@ -58,5 +65,5 @@
     </div>
   </div>
 
-  <img src="assets/images/v02.png" alt="vb" />
+  <img src="assets/images/v04-feedback-succes.png" alt="vb" />
 </div>

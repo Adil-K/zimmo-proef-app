@@ -3,6 +3,7 @@
     [rows]="rows"
     (keyup)="valueChanged($event)"
     [ngModel]="value"
+    [ngClass]="{ 'input-control--invalid': helperText }"
   ></textarea>
   <i class="input-control__helper f-sm" *ngIf="helperText">
     {{ helperText }}
