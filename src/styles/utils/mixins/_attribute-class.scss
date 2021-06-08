@@ -1,0 +1,7 @@
+@mixin attribute-class($list, $attribute: 'color') {
+  @each $name, $var in $list {
+    &-#{$name} {
+      #{$attribute}: $var;
+    }
+  }
+}

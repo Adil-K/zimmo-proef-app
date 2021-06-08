@@ -2,7 +2,7 @@
   <app-feedback-radio-buttons (selectRadioOption)="onOptionSelect($event)">
   </app-feedback-radio-buttons>
 
-  <div class="feedback__section">
+  <div class="section">
     <h3>Wat te doen als je je huis zelf verkoopt of verhuurt?</h3>
     <p>
       Twijfel je hoe je moet beginnen aan de verkoop of verhuur van je woning?
@@ -14,8 +14,14 @@
       kan je zonder zorgen je woning te koop of te huur aanbieden. Het enige wat
       je nog moet doen, is beslissen of je wil verhuren of verkopen!
     </p>
-
-    <app-button></app-button>
+    <div class="flex-row flex-center m-top-40">
+      <app-button
+        text="Verkoop"
+        [type]="ButtonType.Outline"
+        class="m-right-35"
+      ></app-button>
+      <app-button text="Verhuur" [type]="ButtonType.Outline"></app-button>
+    </div>
   </div>
 
   <img src="assets/images/v01.png" alt="vb" />

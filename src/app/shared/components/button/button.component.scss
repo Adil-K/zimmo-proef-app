@@ -1,0 +1,27 @@
+.button {
+  border: 2px solid var(--orange);
+  border-radius: 4px;
+  background-color: var(--orange);
+  color: white;
+  font-weight: 400;
+  font-family: 'Gotham Rounded', 'Open Sans', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 10px 15px 8px;
+  cursor: pointer;
+  transition: color 100ms, background-color 100ms;
+
+  &:hover {
+    background-color: var(--orange-100);
+    border-color: var(--orange-100);
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: var(--orange);
+
+    &:hover {
+      background-color: var(--orange-50);
+    }
+  }
+}

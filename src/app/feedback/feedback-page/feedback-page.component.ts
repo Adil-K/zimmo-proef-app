@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ButtonType } from 'src/app/shared/components/button/button-type.enum';
 
 @Component({
   selector: 'app-feedback-page',
   templateUrl: './feedback-page.component.html',
   styleUrls: ['./feedback-page.component.scss'],
 })
-export class FeedbackPageComponent implements OnInit {
+export class FeedbackPageComponent {
   constructor() {}
 
-  selectedOption = 0;
+  ButtonType = ButtonType;
 
-  ngOnInit(): void {}
+  selectedOption = 0;
 
   onOptionSelect(selected: number) {
     this.selectedOption = selected;

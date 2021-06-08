@@ -1,6 +1,6 @@
 .radio {
   &__container {
-    background-color: #54bcff;
+    background-color: var(--blue);
     height: 120px;
     width: 680px;
     border-radius: 100px;
@@ -44,23 +44,23 @@
         color: white;
 
         &--1 {
-          background-color: #f65455;
+          background-color: var(--red);
         }
 
         &--2 {
-          background-color: #f9af05;
+          background-color: var(--orange);
         }
 
         &--3 {
-          background-color: #fbde26;
+          background-color: var(--yellow);
         }
 
         &--4 {
-          background-color: #a1e36d;
+          background-color: var(--lime);
         }
 
         &--5 {
-          background-color: #40d472;
+          background-color: var(--green);
         }
       }
     }
@@ -73,34 +73,35 @@
     width: 70px;
     height: 70px;
     background-color: #fff;
+    transition: color 100ms, background-color 100ms;
 
     i {
       font-size: 35px;
     }
 
     &--1 {
-      background-color: #fef8f8;
-      color: #f65455;
+      background-color: var(--red-50);
+      color: var(--red);
     }
 
     &--2 {
-      background-color: #fdf1d2;
-      color: #f9af05;
+      background-color: var(--orange-50);
+      color: var(--orange);
     }
 
     &--3 {
-      background-color: #fcffd9;
-      color: #fbde26;
+      background-color: var(--yellow-50);
+      color: var(--yellow);
     }
 
     &--4 {
-      background-color: #efffe2;
-      color: #a1e36d;
+      background-color: var(--lime-50);
+      color: var(--lime);
     }
 
     &--5 {
-      background-color: #d7ffeb;
-      color: #40d472;
+      background-color: var(--green-50);
+      color: var(--green);
     }
   }
 }

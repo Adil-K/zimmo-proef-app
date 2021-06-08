@@ -1,0 +1,48 @@
+$spacing: (
+  '0': 0,
+  '5': 5px,
+  '10': 10px,
+  '15': 15px,
+  '25': 25px,
+  '30': 30px,
+  '35': 35px,
+  '40': 40px,
+  '45': 45px,
+  '50': 50px,
+  '60': 60px,
+  '70': 70px,
+  '100': 100px,
+  'auto': auto,
+);
+
+.m {
+  @include attribute-class($spacing, $attribute: 'margin');
+  &-top {
+    @include attribute-class($spacing, $attribute: 'margin-top');
+  }
+  &-left {
+    @include attribute-class($spacing, $attribute: 'margin-left');
+  }
+  &-right {
+    @include attribute-class($spacing, $attribute: 'margin-right');
+  }
+  &-bottom {
+    @include attribute-class($spacing, $attribute: 'margin-bottom');
+  }
+}
+
+.p {
+  @include attribute-class($spacing, $attribute: 'padding');
+  &-top {
+    @include attribute-class($spacing, $attribute: 'padding-top');
+  }
+  &-left {
+    @include attribute-class($spacing, $attribute: 'padding-left');
+  }
+  &-right {
+    @include attribute-class($spacing, $attribute: 'padding-right');
+  }
+  &-bottom {
+    @include attribute-class($spacing, $attribute: 'padding-bottom');
+  }
+}

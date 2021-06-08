@@ -1,5 +1,17 @@
+// mixins
+@import 'utils/mixins/attribute-class';
+@import 'utils/mixins/mediaqueries';
+
+// variables
+@import 'variables/colors';
+
 // atoms
-@import 'atoms/icons';
-@import 'atoms/font';
 @import 'atoms/body';
+@import 'atoms/font';
 @import 'atoms/heading';
+@import 'atoms/icons';
+@import 'atoms/section';
+
+// utils
+@import 'utils/flex';
+@import 'utils/spacing';
