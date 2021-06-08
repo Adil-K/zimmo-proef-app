@@ -8,4 +8,8 @@
     margin-top: 5px;
     color: var(--red);
   }
+
+  &--invalid {
+    border: 1px solid var(--red) !important;
+  }
 }

@@ -10,10 +10,14 @@
 @import 'atoms/font';
 @import 'atoms/heading';
 @import 'atoms/icons';
+@import 'atoms/link';
 @import 'atoms/section';
 
 // molecules
 @import 'molecules/input-control';
+
+// organisms
+@import 'organisms/blog-list';
 
 // utils
 @import 'utils/flex';

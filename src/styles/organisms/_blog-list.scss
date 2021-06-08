@@ -1,0 +1,40 @@
+.blog-list {
+  display: grid;
+  grid-template-columns: 310px;
+  grid-gap: 20px;
+  align-self: center;
+
+  @include mq-sm {
+    grid-template-columns: repeat(2, 310px);
+  }
+
+  @include mq-md {
+    grid-template-columns: repeat(4, 310px);
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  &__title {
+    text-align: center;
+    margin: 0 0 35px;
+  }
+
+  &__info {
+    background-color: white;
+    padding: 15px 30px 20px;
+
+    h5 {
+      font-size: 14px;
+    }
+
+    p {
+      margin: 10px 0;
+      color: var(--gray);
+    }
+  }
+}
