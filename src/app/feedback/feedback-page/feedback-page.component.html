@@ -1,14 +1,23 @@
 <div class="feedback__container">
-  <app-feedback-radio-buttons
-    (selectRadioOption)="onOptionSelect($event)"
-    title="Hoe eenvoudig kon je je huis online plaatsen?"
-    class="m-top-60"
-  >
-  </app-feedback-radio-buttons>
-
-  <div class="section">
-    <form>
-      <app-textarea [helperText]="'Dit mag niet leeg zijn.'"></app-textarea>
+  <form [formGroup]="feedbackForm">
+    <div class="section">
+      <app-feedback-radio-buttons
+        title="Hoe eenvoudig kon je je huis online plaatsen?"
+        class="m-top-60"
+        formControlName="score"
+        (valueChange)="onOptionSelect()"
+      >
+      </app-feedback-radio-buttons>
+    </div>
+    <div
+      class="p-left-35 p-right-35 p-top-20 m-bottom-20"
+      *ngIf="textAreaSectionVisible"
+    >
+      <h4 class="m-top-0 t-center">Geef je graag wat meer uitleg?</h4>
+      <app-textarea
+        [helperText]="validatorMessage"
+        formControlName="feedbackMessage"
+      ></app-textarea>
       <div class="flex-row m-top-20">
         <p class="f-sm">
           <i class="c-gray"
@@ -17,15 +26,17 @@
         </p>
         <app-button
           text="Verzenden"
-          (clicked)="onSubmit()"
+          (clicked)="onSend()"
           class="m-left-auto"
         ></app-button>
       </div>
-    </form>
-  </div>
+    </div>
+  </form>
 
   <div class="section">
-    <h3>Wat te doen als je je huis zelf verkoopt of verhuurt?</h3>
+    <h3 class="m-top-0">
+      Wat te doen als je je huis zelf verkoopt of verhuurt?
+    </h3>
     <p>
       Twijfel je hoe je moet beginnen aan de verkoop of verhuur van je woning?
       Geen nood. We begrijpen dat dit een spannende periode is en we willen je

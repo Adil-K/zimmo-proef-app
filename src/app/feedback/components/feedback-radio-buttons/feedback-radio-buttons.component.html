@@ -9,7 +9,7 @@
         type="radio"
         [checked]="selectedOption === option"
         name="item.value"
-        (click)="onOptionClick(option)"
+        (click)="optionChanged(option)"
       />
       <span class="radio__button" [ngClass]="'radio__button--' + option">
         <i [ngClass]="'i-smiley-' + option"></i>

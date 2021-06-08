@@ -1,24 +1,52 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ButtonType } from 'src/app/shared/components/button/button-type.enum';
+
+interface Feedback {
+  score: number;
+  feedbackMessage: string;
+}
 
 @Component({
   selector: 'app-feedback-page',
   templateUrl: './feedback-page.component.html',
   styleUrls: ['./feedback-page.component.scss'],
 })
-export class FeedbackPageComponent {
+export class FeedbackPageComponent implements OnInit {
+  feedbackForm!: FormGroup;
   constructor() {}
 
   ButtonType = ButtonType;
-
   selectedOption = 0;
+  textAreaSectionVisible = false;
+  formSubmitted = false;
+  validatorMessage = '';
 
-  onOptionSelect(selected: number) {
-    this.selectedOption = selected;
-    console.log(this.selectedOption);
+  ngOnInit(): void {
+    this.feedbackForm = new FormGroup({
+      score: new FormControl(''),
+      feedbackMessage: new FormControl('', Validators.required),
+    });
   }
 
-  onSubmit() {
-    console.log('submitted form with option ' + this.selectedOption);
+  onOptionSelect(): void {
+    if (this.formSubmitted) {
+      return;
+    }
+    this.textAreaSectionVisible = true;
+  }
+
+  onSend(): void {
+    console.log('submitted form with:');
+    console.table(this.feedbackForm.value as Feedback);
+    this.setValidatorMessage();
+  }
+
+  setValidatorMessage(): void {
+    if (this.feedbackForm.invalid) {
+      this.validatorMessage = 'Dit mag niet leeg zijn';
+      return;
+    }
+    this.validatorMessage = '';
   }
 }
