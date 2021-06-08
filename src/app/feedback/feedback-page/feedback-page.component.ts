@@ -17,4 +17,8 @@ export class FeedbackPageComponent {
     this.selectedOption = selected;
     console.log(this.selectedOption);
   }
+
+  onSubmit() {
+    console.log('submitted form with option ' + this.selectedOption);
+  }
 }

@@ -1,6 +1,28 @@
 <div class="feedback__container">
-  <app-feedback-radio-buttons (selectRadioOption)="onOptionSelect($event)">
+  <app-feedback-radio-buttons
+    (selectRadioOption)="onOptionSelect($event)"
+    title="Hoe eenvoudig kon je je huis online plaatsen?"
+    class="m-top-60"
+  >
   </app-feedback-radio-buttons>
+
+  <div class="section">
+    <form>
+      <app-textarea [helperText]="'Dit mag niet leeg zijn.'"></app-textarea>
+      <div class="flex-row m-top-20">
+        <p class="f-sm">
+          <i class="c-gray"
+            >Wij verwerken uw gegevens conform onze privacy policy</i
+          >
+        </p>
+        <app-button
+          text="Verzenden"
+          (clicked)="onSubmit()"
+          class="m-left-auto"
+        ></app-button>
+      </div>
+    </form>
+  </div>
 
   <div class="section">
     <h3>Wat te doen als je je huis zelf verkoopt of verhuurt?</h3>
@@ -24,5 +46,5 @@
     </div>
   </div>
 
-  <img src="assets/images/v01.png" alt="vb" />
+  <img src="assets/images/v02.png" alt="vb" />
 </div>

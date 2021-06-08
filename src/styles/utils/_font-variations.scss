@@ -1,0 +1,32 @@
+$font-sizes: (
+  'sm': 12px,
+  'md': 14px,
+  'lg': 20px,
+  'xl': 26px,
+);
+
+.f {
+  &-light {
+    font-weight: 400;
+  }
+
+  &-medium {
+    font-weight: 600;
+  }
+
+  &-bold {
+    font-weight: 800;
+  }
+
+  &-italic {
+    font-style: italic;
+  }
+
+  @include attribute-class($font-sizes, $attribute: 'font-size');
+}
+
+.c {
+  &-gray {
+    color: #b2b4bf;
+  }
+}

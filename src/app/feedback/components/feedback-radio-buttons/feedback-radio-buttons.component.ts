@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-feedback-radio-buttons',
@@ -11,6 +11,7 @@ export class FeedbackRadioButtonsComponent implements OnInit {
   selectedOption: number | undefined;
 
   @Output() selectRadioOption = new EventEmitter<number>();
+  @Input() title = 'Title';
 
   constructor() {}
 
