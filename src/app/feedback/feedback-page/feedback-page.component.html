@@ -6,12 +6,13 @@
         class="m-top-60"
         formControlName="score"
         (valueChange)="onOptionSelect()"
+        [disable]="formSubmitted"
       >
       </app-feedback-radio-buttons>
     </div>
     <div
       class="p-left-35 p-right-35 p-top-20 m-bottom-20"
-      *ngIf="textAreaSectionVisible"
+      *ngIf="textAreaSectionVisible && !formSubmitted"
     >
       <h4 class="m-top-0 t-center">Geef je graag wat meer uitleg?</h4>
       <app-textarea
@@ -26,7 +27,7 @@
         </p>
         <app-button
           text="Verzenden"
-          (clicked)="onSend()"
+          (clicked)="onSubmit()"
           class="m-left-auto"
         ></app-button>
       </div>

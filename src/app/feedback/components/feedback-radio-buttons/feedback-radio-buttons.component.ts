@@ -20,13 +20,13 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ],
 })
 export class FeedbackRadioButtonsComponent implements ControlValueAccessor {
-  @Input() value!: number;
   @Input() title = 'Title';
+  @Input() disable = false;
 
   @Output() public valueChange = new EventEmitter<number>();
 
-  selectedOption!: number;
   radioButtonOptions = [1, 2, 3, 4, 5];
+  value!: number;
 
   propagateChange!: (value: number) => {};
   propagateTouched!: (_: unknown) => {};
@@ -34,11 +34,9 @@ export class FeedbackRadioButtonsComponent implements ControlValueAccessor {
   constructor() {}
 
   writeValue(value: number): void {
-    if (value !== undefined) {
-      this.value = value;
-      if (this.propagateChange) {
-        this.propagateChange(this.value);
-      }
+    this.value = value;
+    if (this.propagateChange) {
+      this.propagateChange(this.value);
     }
   }
 
@@ -51,6 +49,7 @@ export class FeedbackRadioButtonsComponent implements ControlValueAccessor {
   }
 
   optionChanged(option: number): void {
+    this.propagateTouched(null);
     this.updateValue(option);
   }
 

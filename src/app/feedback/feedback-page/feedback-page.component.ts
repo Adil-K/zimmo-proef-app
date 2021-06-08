@@ -1,3 +1,4 @@
+import { FeedbackService } from './../services/feedback.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ButtonType } from 'src/app/shared/components/button/button-type.enum';
@@ -14,7 +15,7 @@ interface Feedback {
 })
 export class FeedbackPageComponent implements OnInit {
   feedbackForm!: FormGroup;
-  constructor() {}
+  constructor(private feedbackService: FeedbackService) {}
 
   ButtonType = ButtonType;
   selectedOption = 0;
@@ -24,7 +25,7 @@ export class FeedbackPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.feedbackForm = new FormGroup({
-      score: new FormControl(''),
+      score: new FormControl({ value: '', disabled: this.formSubmitted }),
       feedbackMessage: new FormControl('', Validators.required),
     });
   }
@@ -36,17 +37,24 @@ export class FeedbackPageComponent implements OnInit {
     this.textAreaSectionVisible = true;
   }
 
-  onSend(): void {
-    console.log('submitted form with:');
-    console.table(this.feedbackForm.value as Feedback);
-    this.setValidatorMessage();
-  }
-
-  setValidatorMessage(): void {
-    if (this.feedbackForm.invalid) {
+  onSubmit(): void {
+    if (!this.feedbackForm.valid) {
       this.validatorMessage = 'Dit mag niet leeg zijn';
       return;
     }
-    this.validatorMessage = '';
+
+    const feedback = this.feedbackForm.value;
+
+    this.feedbackService.sendFeedback(feedback).subscribe(
+      () => {
+        this.formSubmitted = true;
+      },
+      (err) => {
+        // show error alert
+      }
+    );
+
+    console.log('submitted form with:');
+    console.log(this.feedbackForm.value as Feedback);
   }
 }

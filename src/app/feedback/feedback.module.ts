@@ -1,3 +1,4 @@
+import { FeedbackService } from './services/feedback.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FeedbackPageComponent } from './feedback-page/feedback-page.component';
@@ -8,5 +9,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [FeedbackPageComponent, FeedbackRadioButtonsComponent],
   imports: [CommonModule, SharedModule, ReactiveFormsModule],
+  providers: [FeedbackService],
 })
 export class FeedbackModule {}

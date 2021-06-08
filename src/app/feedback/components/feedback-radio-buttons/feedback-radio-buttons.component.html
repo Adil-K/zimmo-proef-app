@@ -4,12 +4,17 @@
   </h4>
 
   <div class="radio__items">
-    <div class="radio__item" *ngFor="let option of radioButtonOptions">
+    <div
+      class="radio__item"
+      [ngClass]="{ 'radio__item--disabled': disable }"
+      *ngFor="let option of radioButtonOptions"
+    >
       <input
         type="radio"
-        [checked]="selectedOption === option"
+        [checked]="value === option"
         name="item.value"
         (click)="optionChanged(option)"
+        [disabled]="disable"
       />
       <span class="radio__button" [ngClass]="'radio__button--' + option">
         <i [ngClass]="'i-smiley-' + option"></i>

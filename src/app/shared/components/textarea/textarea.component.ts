@@ -22,7 +22,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class TextareaComponent implements ControlValueAccessor {
   @Input() rows = 5;
   @Input() value = '';
-  @Input() helperText: string | undefined;
+  @Input() helperText = '';
 
   @Output() public valueChange = new EventEmitter<string>();
 

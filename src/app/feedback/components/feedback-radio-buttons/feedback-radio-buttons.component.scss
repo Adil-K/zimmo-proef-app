@@ -27,7 +27,7 @@
     box-shadow: 0 0 10px #0002;
     transition: transform 100ms, box-shadow 100ms;
 
-    &:hover {
+    &:hover:not(.radio__item--disabled) {
       transform: translateY(-5px);
       box-shadow: 0 5px 10px #0002;
     }
@@ -41,6 +41,10 @@
       width: 70px;
       height: 70px;
       cursor: pointer;
+
+      &:disabled {
+        cursor: initial;
+      }
 
       &:checked ~ .radio__button {
         color: white;
