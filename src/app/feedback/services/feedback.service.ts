@@ -5,8 +5,8 @@ import { environment } from 'src/environments/environment';
 import { Observable, of } from 'rxjs';
 
 interface IFeedbackDTO {
-  score: number;
-  feedbackMessage: string;
+  rating: number;
+  message: string;
 }
 
 @Injectable()

@@ -3,11 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ButtonType } from 'src/app/shared/components/button/button-type.enum';
 
-interface Feedback {
-  score: number;
-  feedbackMessage: string;
-}
-
 @Component({
   selector: 'app-feedback-page',
   templateUrl: './feedback-page.component.html',
@@ -15,18 +10,18 @@ interface Feedback {
 })
 export class FeedbackPageComponent implements OnInit {
   feedbackForm!: FormGroup;
-  constructor(private feedbackService: FeedbackService) {}
-
   ButtonType = ButtonType;
   selectedOption = 0;
   textAreaSectionVisible = false;
   formSubmitted = false;
   validatorMessage = '';
 
+  constructor(private feedbackService: FeedbackService) {}
+
   ngOnInit(): void {
     this.feedbackForm = new FormGroup({
-      score: new FormControl({ value: '', disabled: this.formSubmitted }),
-      feedbackMessage: new FormControl('', Validators.required),
+      rating: new FormControl({ value: '', disabled: this.formSubmitted }),
+      message: new FormControl('', Validators.required),
     });
   }
 
